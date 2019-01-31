@@ -1,7 +1,7 @@
 <html>
 
 <head>
-	<title>Weather Data</title>
+	<title> Weather Data</title>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	<style>
@@ -53,7 +53,7 @@
                         sorted_averages.push(vertical_labels[idx])
                     }
                     datasets.push({
-                        label: city,
+                        label: city.slice(0, -4),
                         fill: false,
                         backgroundColor: color,
                         borderColor: color,
@@ -65,15 +65,32 @@
             var configs = {
                 type: 'line',
                 data: {
-                    labels: sorted_months,
+                    labels:["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
                     datasets: datasets,
                 },
                 options: {
                     responsive: true,
                     title: {
                         display: true,
-                        text: 'Weather Data'
+                        text: 'Weather Data - Finland 1910',
+                        fontSize: 20
                     },
+                    scales: {
+                        yAxes:[{
+                            scaleLabel:{
+                                display: true,
+                                labelString: 'Temperature',
+                                fontSize: 16
+                            }
+                        }],
+                        xAxes: [{
+                            scaleLabel:{
+                                display: true,
+                                labelString: 'Months in Year',
+                                fontSize: 16
+                            }
+                        }]
+                    }
                 }
             };
             var ctx = document.getElementById('canvas').getContext('2d');
