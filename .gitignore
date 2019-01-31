@@ -1,0 +1,9 @@
+www/__pycache__
+www/.env
+.env
+.DS_Store
+db.sqlite3
+__pycache__
+.vscode
+.azure_venv*
+.azure_venv/*
