@@ -1,7 +1,7 @@
 azure-cosmos==3.0.2
 azure-functions==1.0.0a5
 azure-functions-worker==1.0.0a6
-certifi==2018.11.29
+certifi==2022.12.7
 chardet==3.0.4
 Django==2.1.5
 grpcio==1.14.2
